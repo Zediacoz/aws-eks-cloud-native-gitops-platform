@@ -14,31 +14,31 @@ spec:
       labels:
         app: devops-app
     spec:
-     containers:
-  - name: devops-app
-    image: ...
-    ports:
-      - containerPort: 5000
-    resources:
-      requests:
-        cpu: "100m"
-        memory: "128Mi"
-      limits:
-        cpu: "300m"
-        memory: "256Mi"
-    readinessProbe:
-      httpGet:
-        path: /healthz
-        port: 5000
-      initialDelaySeconds: 5
-      periodSeconds: 5
-      timeoutSeconds: 2
-      failureThreshold: 3
-    livenessProbe:
-      httpGet:
-        path: /healthz
-        port: 5000
-      initialDelaySeconds: 20
-      periodSeconds: 10
-      timeoutSeconds: 2
-      failureThreshold: 3
+      containers:
+        - name: devops-app
+          image: ...
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 5000
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
