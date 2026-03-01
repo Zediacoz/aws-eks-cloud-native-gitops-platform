@@ -19,3 +19,10 @@ spec:
           image: 225334088200.dkr.ecr.eu-west-2.amazonaws.com/devops-eks-app:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
