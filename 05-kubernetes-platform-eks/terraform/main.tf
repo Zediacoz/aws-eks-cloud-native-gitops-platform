@@ -61,15 +61,37 @@ module "eks" {
   enable_cluster_creator_admin_permissions = true
 
   eks_managed_node_groups = {
-    default = {
-      name = "default"
 
-      instance_types = ["t3.micro"]
-      desired_size   = 2
-      min_size       = 1
-      max_size       = 3
+  default = {
+    name           = "default"
+    instance_types = ["t3.micro"]
+
+    desired_size = 3
+    min_size     = 1
+    max_size     = 6
+  }
+
+  monitoring = {
+    name           = "monitoring"
+    instance_types = ["t3.small"]
+
+    desired_size = 1
+    min_size     = 1
+    max_size     = 2
+
+    labels = {
+      workload = "monitoring"
+    }
+
+    taints = {
+      dedicated = {
+        key    = "dedicated"
+        value  = "monitoring"
+        effect = "NO_SCHEDULE"
+      }
     }
   }
+}
 
   tags = local.common_tags
 }

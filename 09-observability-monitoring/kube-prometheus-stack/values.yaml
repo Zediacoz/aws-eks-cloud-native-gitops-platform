@@ -1,0 +1,28 @@
+grafana:
+  enabled: true
+  service:
+    type: LoadBalancer
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-type: external
+      service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+      service.beta.kubernetes.io/aws-load-balancer-subnets: "subnet-040c487f372bcbc50,subnet-0e8dd929808d21333"
+
+prometheus:
+  prometheusSpec:
+    retention: 7d
+
+prometheusOperator:
+  admissionWebhooks:
+    create:
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoSchedule"
+    patch:
+      tolerations:
+        - key: "dedicated"
+          operator: "Equal"
+          value: "monitoring"
+          effect: "NoSchedule"
