@@ -3,3 +3,7 @@
 **/*.tfstate
 **/*.tfstate.*
 **/terraform.tfvars
+# Local kubectl exports / temp patches
+05-kubernetes-platform-eks/terraform/devops-app-live.yaml
+05-kubernetes-platform-eks/terraform/patch.json
+
