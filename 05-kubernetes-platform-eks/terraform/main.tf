@@ -60,38 +60,66 @@ module "eks" {
   cluster_endpoint_public_access           = true
   enable_cluster_creator_admin_permissions = true
 
+  node_security_group_enable_recommended_rules = false
+
+  cluster_addons = {
+    vpc-cni = {
+      most_recent = true
+      configuration_values = jsonencode({
+        env = {
+          ENABLE_PREFIX_DELEGATION = "true"
+          WARM_PREFIX_TARGET       = "1"
+        }
+      })
+    }
+  }
+    node_security_group_additional_rules = {
+    node_to_node_all = {
+      description = "Allow all traffic between worker nodes"
+      protocol    = "-1"
+      from_port   = 0
+      to_port     = 0
+      type        = "ingress"
+      self        = true
+    }
+  }
   eks_managed_node_groups = {
+    default = {
+      name           = "default"
+      instance_types = ["t3.micro"]
 
-  default = {
-    name           = "default"
-    instance_types = ["t3.micro"]
+      desired_size = 3
+      min_size     = 1
+      max_size     = 6
 
-    desired_size = 3
-    min_size     = 1
-    max_size     = 6
-  }
-
-  monitoring = {
-    name           = "monitoring"
-    instance_types = ["t3.small"]
-
-    desired_size = 1
-    min_size     = 1
-    max_size     = 2
-
-    labels = {
-      workload = "monitoring"
+      # Ensure node group uses the module-managed node SG
+      vpc_security_group_ids = [module.eks.node_security_group_id]
     }
 
-    taints = {
-      dedicated = {
-        key    = "dedicated"
-        value  = "monitoring"
-        effect = "NO_SCHEDULE"
+    monitoring = {
+      name           = "monitoring"
+      instance_types = ["t3.small"]
+
+      desired_size = 1
+      min_size     = 1
+      max_size     = 2
+
+      labels = {
+        workload = "monitoring"
       }
+
+      taints = {
+        dedicated = {
+          key    = "dedicated"
+          value  = "monitoring"
+          effect = "NO_SCHEDULE"
+        }
+      }
+
+      # Ensure node group uses the module-managed node SG
+      vpc_security_group_ids = [module.eks.node_security_group_id]
     }
   }
-}
 
   tags = local.common_tags
 }
