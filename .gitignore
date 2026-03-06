@@ -7,3 +7,4 @@
 05-kubernetes-platform-eks/terraform/devops-app-live.yaml
 05-kubernetes-platform-eks/terraform/patch.json
 
+temp-eks-local-artifacts/
