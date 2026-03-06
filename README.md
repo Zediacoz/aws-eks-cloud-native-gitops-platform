@@ -1,6 +1,6 @@
 # Production-Style Kubernetes Platform on AWS (Terraform + GitOps + Observability)
 
-##Overview
+\##Overview
 This project demonstrates the design, deployment, and operation of a production-style Kubernetes platform on AWS using Infrastructure as Code, GitOps, CI/CD, and observability tooling.
 
 The platform infrastructure is provisioned with Terraform and deploys a Kubernetes cluster on Amazon EKS. Applications are containerized with Docker, built and pushed to Amazon ECR through a GitHub Actions CI pipeline, and deployed to the cluster using ArgoCD following a GitOps workflow.
@@ -11,9 +11,14 @@ The repository is structured to reflect a realistic platform engineering workflo
 
 The goal of this project is to demonstrate practical DevOps engineering skills across the full platform lifecycle: designing infrastructure, deploying and operating services in a cloud-native environment, implementing CI/CD automation, and maintaining operational reliability through monitoring and documented incident response.
 
-##Architecture
+\##Architecture
 
-##Technilogies Used
+!\[Platform Architecture](docs/images/Architecture\_Diagram.png)
+
+
+\##Technilogies Used
+
+
 
 AWS
 Terraform
@@ -23,6 +28,7 @@ ArgoCD
 Prometheus
 Grafana
 GitHub Actions
+
 
 ## Infrastructure Flow
 
@@ -46,3 +52,4 @@ GitHub Actions
 ## Cost Estimate
 
 ## Future Improvements
+
