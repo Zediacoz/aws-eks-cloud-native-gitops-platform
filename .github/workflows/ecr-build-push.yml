@@ -34,7 +34,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f 06-containerization-docker/Dockerfile 06-containerization-docker
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f 03-containerization-docker/Dockerfile 03-containerization-docker
           docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
           docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
           docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ env.SHORT_SHA }}
