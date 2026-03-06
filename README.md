@@ -14,13 +14,15 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 ## Architecture
 
 
-!\[Platform Architecture](docs/images/Architecture\_Diagram.png)
+## Architecture
+
+<p align="center">
+  <img src="docs/images/Architecture_Diagram.png" alt="Platform Architecture" width="950">
+</p>
 
 
 
 ## Technilogies Used
-
-
 
 AWS
 Terraform
