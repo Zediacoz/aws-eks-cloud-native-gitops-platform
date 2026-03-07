@@ -19,8 +19,10 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 
 
 
+## Technologies Used
+
 <details>
-<summary>Technologies Used</summary>
+<summary>Click to expand</summary>
 
 - AWS
 - Terraform
