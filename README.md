@@ -69,7 +69,18 @@ This setup provides clear visibility into cluster health, resource usage, and ap
 
 ## Cost Estimate
 
-## Future Improvements
+This project was designed as a learning-focused DevOps platform, so costs were kept in mind during deployment and testing.
+
+When the full environment is running, the main cost drivers are:
+
+- Amazon EKS control plane: ~ $0.10 per hour
+- EC2 worker nodes: depends on instance type (e.g., ~$0.01–$0.05 per hour for small instances)
+- NAT Gateway: ~ $0.045 per hour
+- Load balancer and networking resources: varies based on usage
+- EBS volumes and data transfer: ~ $0.08–$0.10 per GB per month
+
+Costs depend on runtime, traffic and node sizing, so the total spend will vary. 
+**To minimize unnecessary charges, the infrastructure can be destroyed when not in use by running `terraform destroy`.**
 
 ## Future Improvements
 
