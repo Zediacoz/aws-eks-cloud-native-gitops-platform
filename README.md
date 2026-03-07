@@ -19,16 +19,19 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 
 
 
-## Technilogies Used
+<details>
+<summary>Technologies Used</summary>
 
-AWS
-Terraform
-Kubernetes (EKS)
-Docker
-ArgoCD
-Prometheus
-Grafana
-GitHub Actions
+- AWS
+- Terraform
+- Kubernetes (EKS)
+- Docker
+- ArgoCD
+- Prometheus
+- Grafana
+- GitHub Actions
+
+</details>
 
 
 
