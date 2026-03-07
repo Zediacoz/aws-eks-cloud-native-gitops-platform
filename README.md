@@ -71,3 +71,11 @@ This setup provides clear visibility into cluster health, resource usage, and ap
 
 ## Future Improvements
 
+## Future Improvements
+
+- Add Prometheus Alertmanager for automated alerting and incident notifications.
+- Implement Horizontal Pod Autoscaling (HPA) based on CPU and memory metrics.
+- Introduce ingress with TLS for secure external access to services.
+- Add log aggregation using a centralized logging stack (e.g., Loki or ELK).
+- Implement cost monitoring and optimization for AWS resources.
+
