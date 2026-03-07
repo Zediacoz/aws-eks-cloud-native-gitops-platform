@@ -46,13 +46,11 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 5. ArgoCD deploys application
 6. Prometheus collects metrics
 7. Grafana visualizes metrics
-8. Alertmanager handles incidents
 
 ## CI/CD Pipeline
 
 ## Monitoring
 
-## Alerting
 
 ## Runbooks
 
