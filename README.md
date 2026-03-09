@@ -73,6 +73,8 @@ Runbooks for diagnosing and resolving common Kubernetes incidents/issues in this
 - Service unavailable
 - High CPU or memory usage
 - ArgoCD sync failures
+
+See '/runbooks' directory.
 ## Cost Estimate
 
 This project was designed as a learning-focused DevOps platform, so costs were kept in mind during deployment and testing.
