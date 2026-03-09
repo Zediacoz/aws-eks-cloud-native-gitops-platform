@@ -13,7 +13,7 @@ The goal of the project is to demonstrate practical DevOps engineering skills ac
 ## Architecture
 
 <p align="center">
-  <img src="docs/images/Architecture_Diagram.png" alt="Platform Architecture" width="1000">
+  <img src="docs/images/Architecture_Diagram.png" alt="Platform Architecture" width="800">
 </p>
 
 ## Deployment Verification
