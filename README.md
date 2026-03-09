@@ -70,6 +70,7 @@ Grafana dashboards visualize metrics collected by Prometheus, providing insight 
 
 ## Repository Structure
 
+```
 01-networking-vpc-dns/          Terraform networking module  
 02-kubernetes-platform-eks/     EKS cluster provisioning  
 03-containerization-docker/     Dockerfile and application containerization  
@@ -79,6 +80,7 @@ Grafana dashboards visualize metrics collected by Prometheus, providing insight 
 07-runbooks/                    Troubleshooting documentation  
 
 docs/                           Architecture diagram and validation screenshots
+```
 
 ## Technologies Used
 
